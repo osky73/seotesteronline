@@ -1,0 +1,98 @@
+openapi: 3.1.0
+info:
+  title: SEO Tester Online API v1
+  version: "1.0"
+  description: |
+    Endpoint essenziali per audit SEO on‑page e keyword research.
+    Per usarli serve la header `x-api-key`.
+servers:
+  - url: https://api.seotesteronline.com/v1
+security:
+  - apiKey: []
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: x-api-key
+  schemas:
+    AuditResponse:
+      type: object
+      description: Risultato sintetico dell'audit on‑page
+      properties:
+        score:
+          type: integer
+          description: Punteggio 0‑100
+        issues:
+          type: array
+          items:
+            type: string
+        core_web_vitals:
+          type: object
+    KeywordResponse:
+      type: object
+      description: Lista di keyword correlate con relative metriche
+      properties:
+        seed:
+          type: string
+        keywords:
+          type: array
+          items:
+            type: object
+            properties:
+              keyword:
+                type: string
+              volume:
+                type: integer
+              cpc:
+                type: number
+              difficulty:
+                type: integer
+paths:
+  /audit:
+    get:
+      operationId: audit
+      summary: Audit SEO on‑page
+      parameters:
+        - in: query
+          name: url
+          required: true
+          schema:
+            type: string
+            format: uri
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AuditResponse"
+  /keyword/search:
+    get:
+      operationId: keyword
+      summary: Keyword research
+      parameters:
+        - in: query
+          name: keyword
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: language
+          required: false
+          schema:
+            type: string
+            example: it
+        - in: query
+          name: country
+          required: false
+          schema:
+            type: string
+            example: it
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/KeywordResponse"
