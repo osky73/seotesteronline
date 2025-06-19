@@ -1,0 +1,19 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "SEO Tester Online",
+  "name_for_model": "seo_tester_online",
+  "description_for_human": "Esegui audit SEO e keyword research in tempo reale.",
+  "description_for_model": "Plugin che interroga gli endpoint v1 di SEO Tester Online per audit on‑page e keyword research. Richiede la header x-api-key.",
+  "auth": {
+    "type": "user_http",
+    "authorization_type": "header",
+    "header_name": "x-api-key"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://osky73.github.io/sto-plugin/.well-known/openapi.yaml"
+  },
+  "logo_url": "https://osky73.github.io/sto-plugin/logo.png",
+  "contact_email": "andrea.valle.1973@gmail.com",
+  "legal_info_url": "https://osky73.github.io/sto-plugin/legal.html"
+}
