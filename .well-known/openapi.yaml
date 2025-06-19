@@ -6,7 +6,7 @@ info:
     Endpoint essenziali per audit SEO on‑page e keyword research.
     Per usarli serve la header `x-api-key`.
 servers:
-  - url: https://api.seotesteronline.com/v1
+  - url: https://osky73.github.io/seotesteronline/
 security:
   - apiKey: []
 components:
