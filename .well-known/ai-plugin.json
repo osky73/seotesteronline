@@ -13,7 +13,7 @@
     "type": "openapi",
     "url": "https://osky73.github.io/sto-plugin/.well-known/openapi.yaml"
   },
-  "logo_url": "https://osky73.github.io/sto-plugin/logo.png",
+  "logo_url": "https://github.com/osky73/seotesteronline/logo.png",
   "contact_email": "andrea.valle.1973@gmail.com",
-  "legal_info_url": "https://osky73.github.io/sto-plugin/legal.html"
+  "legal_info_url": "https://github.com/osky73/seotesteronline/legal.html"
 }
